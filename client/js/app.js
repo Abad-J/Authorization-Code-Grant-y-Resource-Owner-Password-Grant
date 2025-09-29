@@ -1,13 +1,13 @@
-// Instanciar el cliente OAuth
+// Instancia el cliente OAuth
 const oauthClient = new OAuthClient(config);
 
-// Inicializar la aplicación cuando el DOM esté listo
+// Inicializa la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
 
 function initializeApp() {
-    // Verificar el tipo de página actual
+    // Verifica el tipo de página actual
     if (window.location.pathname.endsWith('callback.html')) {
         handleCallbackPage();
         return;
@@ -66,7 +66,7 @@ function handleLoginPage() {
         });
     }
     
-    // Verificar si ya está autenticado
+    // Verifica si ya está autenticado
     if (oauthClient.isAuthenticated()) {
         window.location.href = 'index.html';
     }
@@ -172,7 +172,7 @@ function hideUserInfo() {
     }
 }
 
-// Manejar la página de callback
+// Maneja la página de callback
 async function handleCallbackPage() {
     try {
         setStatus('Procesando autorización...', 'loading');
